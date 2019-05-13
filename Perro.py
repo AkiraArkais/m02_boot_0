@@ -33,10 +33,19 @@ class WolfDog(Dog):
         Dog.__init__(self, n, a, w)
         self.owner = o
         self.wolf = True
+        self.__hunting = False
         
     def __str__(self):
         return "{}, el perro lobo, es de {}".format(self.name, self.owner)
     
     def howl(self):
-        print("AUUUUUUUUUUUUUUUUUUUU")
-        
+        if self.__hunting:
+            print("Shhhhh, calla que se escapa")
+        else:
+            print("AUUUUUUUUUUUUUUUUUUUU")
+            
+    def hunting(self, value=None):
+        if value == None:
+            return self.__hunting
+        else:
+            self.__hunting = value
