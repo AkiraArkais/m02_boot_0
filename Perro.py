@@ -10,3 +10,5 @@ class Dog():
         else:
             print("guau, guau")
         
+    def __str__(self):
+        return "Soy el perro {}".format(self.name)
