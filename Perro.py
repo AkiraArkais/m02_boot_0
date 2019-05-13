@@ -1,3 +1,4 @@
+#Object/Class
 class Dog():
     def __init__(self, n, a, w):
         self.name = n
@@ -12,3 +13,30 @@ class Dog():
         
     def __str__(self):
         return "Soy el perro {}".format(self.name)
+
+#Happy Dog Subclass
+class HappyDog(Dog):
+    def __init__(self, n, a, w, o):
+        Dog.__init__(self, n, a, w)
+        self.owner = o
+        self.happy = True
+        
+    def __str__(self):
+        return "{}, el perro feliz, es de {}".format(self.name, self.owner)
+    
+    def walk(self):
+        print ("{} tira de la correa y se lleva piedras a casa de {}".format(self.name, self.owner))
+        
+#Wolf Dog Subclass
+class WolfDog(Dog):
+    def __init__(self, n, a, w, o):
+        Dog.__init__(self, n, a, w)
+        self.owner = o
+        self.wolf = True
+        
+    def __str__(self):
+        return "{}, el perro lobo, es de {}".format(self.name, self.owner)
+    
+    def howl(self):
+        print("AUUUUUUUUUUUUUUUUUUUU")
+        
